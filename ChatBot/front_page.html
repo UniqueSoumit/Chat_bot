@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Quill</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+    }
+
+    .centered {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .centered button.continue-button {
+      background-color: white;
+      border: 2px solid #007bff;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      color: #007bff;
+      
+    }
+
+    .centered button.continue-button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .signin-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      max-width: 300px;
+      width: auto;
+     
+      margin-left: 45px;
+     
+    }
+
+    .signin-button:hover {
+      background-color: #0056b3;
+    }
+
+
+    #signupSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div class="centered" id="welcomeSection">
+    <img src="ChatBot.png" alt="Your Image">
+    <h1 id="welcomeText">Welcome to Quill</h1>
+    <button id="nextButton" onclick="showSignup()">Next</button>
+  </div>
+
+  <div class="centered" id="signupSection" style="display:none;">
+    <img src="ChatBot.png" alt="Your Image">
+    <h2>Continue with</h2>
+    <button class="continue-button" onclick="continueWith('Facebook')">Continue with Facebook</button>
+    <button class="continue-button" onclick="continueWith('Google')">Continue with Google</button>
+    <button class="continue-button" onclick="continueWith('Apple')">Continue with Apple</button>
+    <button class="signin-button" onclick="signInWithPassword()">Sign in with password</button>
+    <p>Don't have an account? <a href="#">Sign Up</a></p>
+  </div>
+
+  
+
+  <script>
+    function showSignup() {
+      document.getElementById('welcomeSection').style.display = 'none';
+      document.getElementById('signupSection').style.display = 'block';
+    }
+
+    function continueWith(platform) {
+      alert('Continue with ' + platform);
+    }
+
+    function signInWithPassword() {
+    window.location.href = 'signin.html'; 
+    }
+  </script>
+</body>
+
+</html>
